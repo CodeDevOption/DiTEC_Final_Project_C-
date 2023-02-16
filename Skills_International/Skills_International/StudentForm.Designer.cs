@@ -1306,6 +1306,7 @@
             this.btnClear.TextMarginLeft = 0;
             this.btnClear.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnClear.UseDefaultRadiusAndThickness = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDel
             // 
@@ -1395,6 +1396,7 @@
             this.btnDel.TextMarginLeft = 0;
             this.btnDel.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnDel.UseDefaultRadiusAndThickness = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnUpdate
             // 
@@ -1484,6 +1486,7 @@
             this.btnUpdate.TextMarginLeft = 0;
             this.btnUpdate.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnUpdate.UseDefaultRadiusAndThickness = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnReg
             // 
@@ -1573,6 +1576,7 @@
             this.btnReg.TextMarginLeft = 0;
             this.btnReg.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnReg.UseDefaultRadiusAndThickness = true;
+            this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
             // 
             // StudentForm
             // 

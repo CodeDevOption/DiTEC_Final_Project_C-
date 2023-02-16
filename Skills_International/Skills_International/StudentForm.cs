@@ -76,10 +76,6 @@ namespace Skills_International
 
 
         //Student Registration Btn Event Handler
-        private void btnReg_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtSearch_TextChange(object sender, EventArgs e)
         {
@@ -110,14 +106,155 @@ namespace Skills_International
 
         }
 
+        private void StudentForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            HomeForm hf = new HomeForm();
+            hf.Show();
+
+        }
+
+        private void btnReg_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                //Store StudentForm Data in to Variables 
+                string fName = txtFName.Text;
+                string lName = txtLName.Text;
+                string bDate = dpBDate.Text;
+                string gender;
+                if (male.Checked)
+                {
+                    gender = "Male";
+                }
+                else
+                {
+                    gender = "Female";
+                }
+                string address = txtAddress.Text;
+                string email = txtEmail.Text;
+                string mPhNo = txtMPNo.Text;
+                string hPhNo = txtHPNo.Text;
+                string pName = txtPName.Text;
+                string pNic = txtPNic.Text;
+                string pconNo = txtpConNo.Text;
+
+                //Check Value is Empty?
+                if (fName == "" || lName == "" || bDate == "" || gender == "" || address == "" || email == "" || pName == "" || pNic == "" || pconNo == "")
+                {
+                    MessageBox.Show("Missing Imprtant Values Plese Check Your Data Again", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    int mPNo = int.Parse(mPhNo);
+                    int hPNo = int.Parse(hPhNo);
+                    int conNo = int.Parse(pconNo);
+
+                    con.Open();
+                    cmd = new SqlCommand("INSERT INTO StudentRegistration VALUES('" + fName + "','" + lName + "','" + bDate + "','" + gender + "','" + address + "','" + email + "'," + mPNo + "," + hPNo + ",'" + pName + "','" + pNic + "','" + conNo + "')", con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Record Added Succesfully", "Regiser Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                con.Close();
+                DataLoad();
+            }
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+                //Store StudentForm Data in to Variables 
+                string rno = lbStnRegID.Text;
+                string fName = txtFName.Text;
+                string lName = txtLName.Text;
+                string bDate = dpBDate.Text;
+                string gender;
+                if (male.Checked)
+                {
+                    gender = "Male";
+                }
+                else
+                {
+                    gender = "Female";
+                }
+                string address = txtAddress.Text;
+                string email = txtEmail.Text;
+                string mPhNo = txtMPNo.Text;
+                string hPhNo = txtHPNo.Text;
+                string pName = txtPName.Text;
+                string pNic = txtPNic.Text;
+                string pconNo = txtpConNo.Text;
+
+                //Check Value is Empty?
+                if (fName == "" || lName == "" || bDate == "" || gender == "" || address == "" || email == "" || pName == "" || pNic == "" || pconNo == "" || rno == "")
+                {
+                    MessageBox.Show("Missing Imprtant Values Plese Check Your Data Again", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    int mPNo = int.Parse(mPhNo);
+                    int hPNo = int.Parse(hPhNo);
+                    int conNo = int.Parse(pconNo);
+                    int regNo = int.Parse(rno);
+
+                    con.Open();
+                    cmd = new SqlCommand("UPDATE StudentRegistration SET FirstName ='" + fName + "', LastName ='" + lName + "', DateOfBirth ='" + bDate + "', Gender ='" + gender + "', Address ='" + address + "', Email ='" + email + "', MobilePhone =" + mPhNo + ",HomePhone =" + hPNo + ", ParentName ='" + pName + "', NIC ='" + pNic + "',ContactNo=" + conNo + " WHERE RegNo=" + regNo + "", con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Record Updated Succesfully", "Update Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                con.Close();
+                DataLoad();
+            }
         }
 
         private void btnDel_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show("Are you sure, Do you really want to Delete this Record..?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                try
+                {
+                    int regNo = int.Parse(lbStnRegID.Text);
+                    cmd = new SqlCommand("DELETE FROM StudentRegistration WHERE RegNo=" + regNo + "", con);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Record Delete Succesfully", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    con.Close();
+                    DataLoad();
+                }
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -125,12 +262,7 @@ namespace Skills_International
             Clear();
         }
 
-        private void StudentForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            HomeForm hf = new HomeForm();
-            hf.Show();
 
-        }
 
     }
 }
