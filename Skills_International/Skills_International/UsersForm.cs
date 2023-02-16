@@ -12,10 +12,10 @@ using System.Windows.Forms;
 /*
  * Name: Lahiru Sadaruwan
  * RegNo :E161509
- * Github Profile link: 
- * Student Form Created Date:2023/02/04
+ * Github Profile link: https://github.com/CodeDevOption
+ * Created Date:2023/02/04
  * Last Edited Date: Date:2023/02/05
- * All Right Recerved
+ * All Right Reserved
  */
 
 
@@ -181,5 +181,12 @@ namespace Skills_International
         {
             Clear();
         }
+
+        private void UsersForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            HomeForm hf = new HomeForm();
+            hf.Show();
+        }
+
     }
 }

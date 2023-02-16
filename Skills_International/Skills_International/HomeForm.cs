@@ -8,6 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * Name: Lahiru Sadaruwan
+ * RegNo :E161509
+ * Github Profile link: https://github.com/CodeDevOption
+ * Created Date:2023/02/04
+ * Last Edited Date: Date:2023/02/04
+ * All Right Reserved
+ */
+
+
 namespace Skills_International
 {
     public partial class HomeForm : Form
@@ -55,6 +65,33 @@ namespace Skills_International
             this.Hide();
             UsersForm usf = new UsersForm();
             usf.Show();
+        }
+
+        private void btnMngStaff_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ManageStaffForm mngsf = new ManageStaffForm();
+            mngsf.Show();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            btnMngStaff_Click(sender,e);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            btnMngStaff_Click(sender, e);
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            btnMngUsers_Click(sender,e);
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            btnMngUsers_Click(sender, e);
         }
 
     }

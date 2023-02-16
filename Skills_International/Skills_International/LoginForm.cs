@@ -12,10 +12,10 @@ using System.Windows.Forms;
 /*
  * Name: Lahiru Sadaruwan
  * RegNo :E161509
- * Github Profile link: 
- * Student Form Created Date:2023/02/04
+ * Github Profile link: https://github.com/CodeDevOption
+ * Created Date:2023/02/04
  * Last Edited Date: Date:2023/02/04
- * All Right Recerved
+ * All Right Reserved
  */
 
 namespace Skills_International
@@ -58,19 +58,25 @@ namespace Skills_International
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Users WHERE Username='" + txtUsername.Text + "' AND Password='" + txtPassword.Text + "'", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if (dt.Rows.Count == 1)
+            try
             {
-                this.Hide();
-                HomeForm hf = new HomeForm();
-                hf.Show();
-            }
-            else
-            {
-                MessageBox.Show("Invalid Login credentials, please check Username and Password and try again", "Invalid Login Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtUsername.Focus();
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Users WHERE Username='" + txtUsername.Text + "' AND Password='" + txtPassword.Text + "'", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows.Count == 1)
+                {
+                    this.Hide();
+                    HomeForm hf = new HomeForm();
+                    hf.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Login credentials, please check Username and Password and try again", "Invalid Login Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUsername.Focus();
+                }
+            }catch(Exception ex){
+
+                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -87,8 +93,7 @@ namespace Skills_International
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true;
-                btnLogin.Focus();
-                btnLogin_Click(sender,e);
+                btnLogin_Click(sender, e);
             }
         }
 

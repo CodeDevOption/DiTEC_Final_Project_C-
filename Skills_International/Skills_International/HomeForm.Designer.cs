@@ -35,17 +35,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.btnMngStaff = new Bunifu.UI.WinForms.BunifuPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnMngUsers = new Bunifu.UI.WinForms.BunifuPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.logoutbtn = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnStnReg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.bunifuPanel2.SuspendLayout();
+            this.btnMngStaff.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.btnMngUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -126,22 +127,23 @@
             this.label3.TabIndex = 3;
             this.label3.Text = " Skills International";
             // 
-            // bunifuPanel2
+            // btnMngStaff
             // 
-            this.bunifuPanel2.BackgroundColor = System.Drawing.Color.LightBlue;
-            this.bunifuPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel2.BackgroundImage")));
-            this.bunifuPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuPanel2.BorderColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel2.BorderRadius = 10;
-            this.bunifuPanel2.BorderThickness = 1;
-            this.bunifuPanel2.Controls.Add(this.label4);
-            this.bunifuPanel2.Controls.Add(this.pictureBox3);
-            this.bunifuPanel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuPanel2.Location = new System.Drawing.Point(318, 170);
-            this.bunifuPanel2.Name = "bunifuPanel2";
-            this.bunifuPanel2.ShowBorders = true;
-            this.bunifuPanel2.Size = new System.Drawing.Size(226, 132);
-            this.bunifuPanel2.TabIndex = 0;
+            this.btnMngStaff.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.btnMngStaff.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMngStaff.BackgroundImage")));
+            this.btnMngStaff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMngStaff.BorderColor = System.Drawing.Color.Transparent;
+            this.btnMngStaff.BorderRadius = 10;
+            this.btnMngStaff.BorderThickness = 1;
+            this.btnMngStaff.Controls.Add(this.label4);
+            this.btnMngStaff.Controls.Add(this.pictureBox3);
+            this.btnMngStaff.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMngStaff.Location = new System.Drawing.Point(318, 170);
+            this.btnMngStaff.Name = "btnMngStaff";
+            this.btnMngStaff.ShowBorders = true;
+            this.btnMngStaff.Size = new System.Drawing.Size(226, 132);
+            this.btnMngStaff.TabIndex = 0;
+            this.btnMngStaff.Click += new System.EventHandler(this.btnMngStaff_Click);
             // 
             // label4
             // 
@@ -153,6 +155,7 @@
             this.label4.Size = new System.Drawing.Size(111, 42);
             this.label4.TabIndex = 3;
             this.label4.Text = "Manage Staff";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox3
             // 
@@ -164,6 +167,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // btnMngUsers
             // 
@@ -193,6 +197,7 @@
             this.label6.Size = new System.Drawing.Size(111, 42);
             this.label6.TabIndex = 3;
             this.label6.Text = "Manage Users";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // pictureBox5
             // 
@@ -204,6 +209,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // logoutbtn
             // 
@@ -217,20 +223,33 @@
             this.logoutbtn.TabStop = false;
             this.logoutbtn.Click += new System.EventHandler(this.logoutbtn_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label7.Location = new System.Drawing.Point(642, 472);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(222, 13);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "© 2023 Lahiru Sadaruwan. All rights reserved.";
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(866, 485);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnStnReg);
             this.Controls.Add(this.logoutbtn);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnMngUsers);
-            this.Controls.Add(this.bunifuPanel2);
+            this.Controls.Add(this.btnMngStaff);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -239,7 +258,7 @@
             this.btnStnReg.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.bunifuPanel2.ResumeLayout(false);
+            this.btnMngStaff.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.btnMngUsers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -257,12 +276,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
-        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
+        private Bunifu.UI.WinForms.BunifuPanel btnMngStaff;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private Bunifu.UI.WinForms.BunifuPanel btnMngUsers;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox logoutbtn;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -50,13 +50,14 @@
             this.btnLogin = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnExit = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.chkShowPas = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(29, 54);
+            this.pictureBox1.Location = new System.Drawing.Point(29, 47);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(96, 112);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -68,7 +69,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(42, 181);
+            this.label1.Location = new System.Drawing.Point(42, 174);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 25);
             this.label1.TabIndex = 4;
@@ -102,7 +103,7 @@
             this.txtUsername.IconRight = null;
             this.txtUsername.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsername.Lines = new string[0];
-            this.txtUsername.Location = new System.Drawing.Point(156, 65);
+            this.txtUsername.Location = new System.Drawing.Point(156, 46);
             this.txtUsername.MaxLength = 32767;
             this.txtUsername.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtUsername.Modified = false;
@@ -178,7 +179,7 @@
             this.txtPassword.IconRight = null;
             this.txtPassword.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.Lines = new string[0];
-            this.txtPassword.Location = new System.Drawing.Point(156, 122);
+            this.txtPassword.Location = new System.Drawing.Point(156, 103);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPassword.Modified = false;
@@ -224,13 +225,14 @@
             this.txtPassword.TextPlaceholder = "";
             this.txtPassword.UseSystemPasswordChar = false;
             this.txtPassword.WordWrap = true;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(155, 47);
+            this.label2.Location = new System.Drawing.Point(155, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 15);
             this.label2.TabIndex = 4;
@@ -241,7 +243,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(155, 105);
+            this.label3.Location = new System.Drawing.Point(155, 86);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 15);
             this.label3.TabIndex = 4;
@@ -299,7 +301,7 @@
             this.btnLogin.IdleIconLeftImage = null;
             this.btnLogin.IdleIconRightImage = null;
             this.btnLogin.IndicateFocus = false;
-            this.btnLogin.Location = new System.Drawing.Point(314, 208);
+            this.btnLogin.Location = new System.Drawing.Point(314, 189);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnLogin.OnDisabledState.BorderRadius = 10;
@@ -389,7 +391,7 @@
             this.btnExit.IdleIconLeftImage = null;
             this.btnExit.IdleIconRightImage = null;
             this.btnExit.IndicateFocus = false;
-            this.btnExit.Location = new System.Drawing.Point(158, 208);
+            this.btnExit.Location = new System.Drawing.Point(158, 189);
             this.btnExit.Name = "btnExit";
             this.btnExit.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnExit.OnDisabledState.BorderRadius = 10;
@@ -436,7 +438,7 @@
             // 
             this.chkShowPas.AutoSize = true;
             this.chkShowPas.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.chkShowPas.Location = new System.Drawing.Point(158, 166);
+            this.chkShowPas.Location = new System.Drawing.Point(158, 147);
             this.chkShowPas.Name = "chkShowPas";
             this.chkShowPas.Size = new System.Drawing.Size(102, 17);
             this.chkShowPas.TabIndex = 3;
@@ -444,12 +446,24 @@
             this.chkShowPas.UseVisualStyleBackColor = true;
             this.chkShowPas.CheckStateChanged += new System.EventHandler(this.chkShowPas_CheckStateChanged);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label7.Location = new System.Drawing.Point(3, 251);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(222, 13);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "© 2023 Lahiru Sadaruwan. All rights reserved.";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(449, 267);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.chkShowPas);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
@@ -460,6 +474,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Skills International - Login";
@@ -482,5 +497,6 @@
         private System.Windows.Forms.CheckBox chkShowPas;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnExit;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnLogin;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -5,7 +5,6 @@ D:\MyFinalProject\Skills_International\Skills_International\bin\Debug\Bunifu.UI.
 D:\MyFinalProject\Skills_International\Skills_International\bin\Debug\Bunifu.UI.WinForms.BunifuProgressBar.dll
 D:\MyFinalProject\Skills_International\Skills_International\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
 D:\MyFinalProject\Skills_International\Skills_International\bin\Debug\Bunifu.UI.WinForms.BunifuProgressBar.xml
-D:\MyFinalProject\Skills_International\Skills_International\obj\Debug\Skills_International.csprojResolveAssemblyReference.cache
 D:\MyFinalProject\Skills_International\Skills_International\obj\Debug\Skills_International.Properties.Resources.resources
 D:\MyFinalProject\Skills_International\Skills_International\obj\Debug\Skills_International.csproj.GenerateResource.Cache
 D:\MyFinalProject\Skills_International\Skills_International\obj\Debug\Skills_International.exe.licenses
@@ -30,3 +29,6 @@ D:\MyFinalProject\Skills_International\Skills_International\obj\Debug\Skills_Int
 D:\MyFinalProject\Skills_International\Skills_International\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
 D:\MyFinalProject\Skills_International\Skills_International\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.xml
 D:\MyFinalProject\Skills_International\Skills_International\obj\Debug\Skills_International.UsersForm.resources
+D:\MyFinalProject\Skills_International\Skills_International\obj\Debug\Skills_International.csprojResolveAssemblyReference.cache
+D:\MyFinalProject\Skills_International\Skills_International\obj\Debug\Skills_International.ManageStaffForm.resources
+D:\MyFinalProject\Skills_International\Skills_International\bin\Debug\Siticone.UI.dll
