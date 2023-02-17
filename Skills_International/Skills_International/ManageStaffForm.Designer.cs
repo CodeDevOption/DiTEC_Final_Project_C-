@@ -89,9 +89,9 @@
             this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label3.Location = new System.Drawing.Point(426, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 25);
+            this.label3.Size = new System.Drawing.Size(155, 25);
             this.label3.TabIndex = 34;
-            this.label3.Text = "Manage Users";
+            this.label3.Text = "Manage Staff";
             // 
             // staffDataGridView
             // 
@@ -1036,7 +1036,6 @@
             this.label7.Size = new System.Drawing.Size(222, 13);
             this.label7.TabIndex = 30;
             this.label7.Text = "© 2023 Lahiru Sadaruwan. All rights reserved.";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // ManageStaffForm
             // 

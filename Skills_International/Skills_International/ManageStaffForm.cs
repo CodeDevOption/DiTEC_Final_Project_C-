@@ -38,7 +38,7 @@ namespace Skills_International
             hf.Show();
         }
 
-        //StudentForm Clear Method
+        //Manage Staff Form Clear Method
         private void Clear()
         {
             txtFullName.Clear();
@@ -140,7 +140,7 @@ namespace Skills_International
             try
             {
 
-                //Store StudentForm Data in to Variables 
+                //Store Staff Data in to Variables 
                 string fullName = txtFullName.Text;
                 string email = txtEmail.Text;
                 string pNo = txtPNo.Text;
@@ -209,11 +209,6 @@ namespace Skills_International
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clear();
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
 
     }

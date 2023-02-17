@@ -14,7 +14,7 @@ using System.Windows.Forms;
  * RegNo :E161509
  * Github Profile link: https://github.com/CodeDevOption
  * Created Date:2023/02/04
- * Last Edited Date: Date:2023/02/05
+ * Last Edited Date: Date:2023/02/17
  * All Right Reserved
  */
 
@@ -45,7 +45,7 @@ namespace Skills_International
             try
             {
 
-                //Store StudentForm Data in to Variables 
+                //Store Users Data in to Variables 
                 string username = txtUsername.Text;
                 string passowrd = "";
                 if (txtPassowrd.Text == txtComPassword.Text)
@@ -67,7 +67,7 @@ namespace Skills_International
                     con.Open();
                     cmd = new SqlCommand("INSERT INTO Users VALUES('" + username + "','" + passowrd + "')", con);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Record Added Succesfully", "Regiser Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Record Added Succesfully", "Regiser Users", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clear();
                 }
 
@@ -84,9 +84,10 @@ namespace Skills_International
             }
         }
 
-        //StudentForm Clear Method
+        //Users Form Clear Method
         private void Clear()
         {
+            lblUsername.ResetText();
             txtUsername.Clear();
             txtPassowrd.Clear();
             txtComPassword.Clear();
@@ -103,7 +104,7 @@ namespace Skills_International
             try
             {
 
-                //Store StudentForm Data in to Variables 
+                //Store Users Form Data in to Variables 
                 string username = txtUsername.Text;
                 string passowrd = "";
                 if (txtPassowrd.Text == txtComPassword.Text)
@@ -117,16 +118,16 @@ namespace Skills_International
 
 
                 //Check Value is Empty?
-                if (username == "" || passowrd == "")
+                if (username == "" || passowrd == "" || lblUsername.Text == "")
                 {
                     MessageBox.Show("Missing Imprtant Values Plese Check Your Data Again", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
                     con.Open();
-                    cmd = new SqlCommand("UPDATE Users SET Username='" + username + "', Password='" + passowrd + "' WHERE Username='" + username + "'", con);
+                    cmd = new SqlCommand("UPDATE Users SET Username='" + username + "', Password='" + passowrd + "' WHERE Username='" + lblUsername.Text + "'", con);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Record Updated Succesfully", "Regiser Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Record Updated Succesfully", "Update Users", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clear();
                 }
 
@@ -146,6 +147,7 @@ namespace Skills_International
         private void usersDataGridView_Click(object sender, EventArgs e)
         {
             txtUsername.Text = usersDataGridView.CurrentRow.Cells[0].Value.ToString();
+            lblUsername.Text = usersDataGridView.CurrentRow.Cells[0].Value.ToString();
             txtPassowrd.Text = usersDataGridView.CurrentRow.Cells[1].Value.ToString();
             txtComPassword.Text = usersDataGridView.CurrentRow.Cells[1].Value.ToString();
         }
@@ -157,11 +159,11 @@ namespace Skills_International
             {
                 try
                 {
-                    string username = txtUsername.Text;
+                    string username = lblUsername.Text;
                     cmd = new SqlCommand("DELETE FROM Users WHERE Username='" + username + "'", con);
                     con.Open();
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Record Added Succesfully", "Delete User", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Record Deleted Succesfully", "Delete Users", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clear();
 
                 }

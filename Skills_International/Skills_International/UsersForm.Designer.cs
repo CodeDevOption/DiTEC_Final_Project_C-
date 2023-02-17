@@ -62,6 +62,7 @@
             this.btnEdit = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnDel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnClear = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.lblUsername = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
@@ -782,12 +783,24 @@
             this.btnClear.UseDefaultRadiusAndThickness = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lblUsername.Location = new System.Drawing.Point(735, 9);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(0, 18);
+            this.lblUsername.TabIndex = 32;
+            this.lblUsername.Visible = false;
+            // 
             // UsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(747, 377);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.label3);
@@ -833,5 +846,6 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnEdit;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDel;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnClear;
+        private System.Windows.Forms.Label lblUsername;
     }
 }
